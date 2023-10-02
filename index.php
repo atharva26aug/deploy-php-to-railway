@@ -55,12 +55,12 @@ form {
     <script src="./scripts/index.js"></script>
 <?php
     if (isset($_POST['name'])) {
-        $host = "containers-us-west-103.railway.app";
-        $server = "mysql://root:v4LZnei8iHdYDGGhcc4F@containers-us-west-103.railway.app:7885/railway";
-        $dbname = "railway";
-        $username = "root";
-        $password = "v4LZnei8iHdYDGGhcc4F";
-        $port = 7885;
+        $host = $_ENV['MYSQLHOST'];
+        $server = $_ENV['MYSQL_URL'];
+        $dbname = $_ENV['MYSQLDATABASE'];
+        $username = $_ENV['MYSQLUSER'];
+        $password = $_ENV['MYSQLPASSWORD'];
+        $port = $_ENV['MYSQLPORT'];
     
         $con = mysqli_connect($host, $username, $password, $dbname, $port);
 
